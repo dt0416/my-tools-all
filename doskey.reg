@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
+/*"AutoRun"="E:\\Dropbox\\Develop\\SetEnv.bat&doskey /macrofile=E:\\Dropbox\\Develop\\alias"*/
+"AutoRun"="E:\\Tools\\Java\\SetEnv.bat"

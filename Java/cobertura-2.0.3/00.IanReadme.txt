@@ -1,0 +1,5 @@
+Cobertura為評估測試覆蓋率的工具
+1. 複製專案的src、bin至proj目錄下
+2. 執行01.GenClass.bat產生cobertura所需的class至instrumented目錄下，並產生cobertura.ser
+3. 執行02.SimulateTest.bat模擬測試
+4. 執行03.GenReport.bat產生報表

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering
+SYSTEM "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+
+<hibernate-reverse-engineering>
+
+    <!-- 4demo -->
+    <table-filter match-name=".*" package="ln.hibernate.c01hibernatedemo.pojo"/>
+
+    <!-- CR_ITIL -->
+    <!-- <table-filter match-schema="CR_ITIL" match-name=".*" package="com.fet.critil.data.pojo"/> -->
+
+    <!-- ESDP -->
+    <!-- <table-filter match-schema="SPVDB" match-name="ESDP.*" package="com.fet.spv.esdp.data.pojo"/> --><!-- 只匯出ESDP開頭的Table -->
+</hibernate-reverse-engineering>
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- generatorConfig_postgreSQL -->
+<generatorConfiguration>
+  <!-- 資料庫連接driver -->
+  <classPathEntry location="lib/jdbc/postgresql-9.3-1102-jdbc41.jar" />
+
+  <!-- 資料庫連接資料 -->
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <!-- 註解設定 -->
+    <commentGenerator>
+      <property name="suppressAllComments" value="true" />
+    </commentGenerator>
+
+    <!-- PostgreSQL -->
+    <jdbcConnection driverClass="org.postgresql.Driver"
+      connectionURL="jdbc:postgresql://10.10.2.68:5444/ezfrnplatform"
+      userId="ian"
+      password="ez_12345">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <!-- POJO -->
+    <!-- <javaModelGenerator targetPackage="ln.mybatis.model" targetProject="output/src"> -->
+    <javaModelGenerator targetPackage="eztravel.core.pojo.frnplatform" targetProject="output/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <!-- XML -->
+    <!-- <sqlMapGenerator targetPackage="ln.mybatis.xml"  targetProject="output/src"> -->
+    <sqlMapGenerator targetPackage="eztravel.persistence.repository.frnplatform.center"  targetProject="output/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!-- Mapper -->
+    <!-- <javaClientGenerator type="XMLMAPPER" targetPackage="ln.mybatis.dao"  targetProject="output/src"> -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="eztravel.persistence.repository.frnplatform.center"  targetProject="output/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- 要產生的Table -->
+    <!-- config -->
+    <table tableName="tblcode_map" domainObjectName="CodeMap" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="code_detail" domainObjectName="CodeDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblpfpro_price_chk" domainObjectName="PfProPriceChk" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblpfpro_price_rule" domainObjectName="PfProPriceRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblupd_status" domainObjectName="UpdStatus" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblvnd_main" domainObjectName="VndMain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="true" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <!-- pfpro -->
+    <table tableName="tmp_f_tblpfpro" domainObjectName="PfPro" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="true" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tmp_f_tblpfpro_airinfo" domainObjectName="PfProAirinfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tmp_f_tblpfpro_allot" domainObjectName="PfProAllot" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tmp_f_tblpfpro_d_imgs" domainObjectName="PfProDImgs" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tmp_f_tblpfpro_d_scheduled" domainObjectName="PfProDScheduled" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tmp_f_tblpfpro_imgs" domainObjectName="PfProImgs" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tmp_f_tblpfpro_price" domainObjectName="PfProPrice" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tmp_f_tblpfpro_ref" domainObjectName="PfProRef" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <!-- pfpro_imp -->
+    <table tableName="tblpfpro_imp_detail" domainObjectName="PfProImpDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblpfpro_imp_main" domainObjectName="PfProImpMain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <!-- pfpro_mapping -->
+    <table tableName="tblpfpro_mapping_detail" domainObjectName="PfProMappingDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblpfpro_mapping_main" domainObjectName="PfProMappingMain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <!-- pfpro_mapping -->
+    <table tableName="tblordpfpro" domainObjectName="OrdPfPro" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblordpfpro_d_scheduled" domainObjectName="OrdPfProDScheduled" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblordpfpro_ref" domainObjectName="OrdPfProRef" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+
+    <table tableName="tblpffrn" domainObjectName="PfFrn" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblpford_main" domainObjectName="PfOrdMain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblpford_pln" domainObjectName="PfOrdPln" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblpford_prod_extend" domainObjectName="PfOrdProdExtend" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+
+
+  </context>
+</generatorConfiguration>

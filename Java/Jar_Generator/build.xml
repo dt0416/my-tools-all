@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="mkjar" default="mkjar" basedir=".">
+    <property name="dst" value="dst" />
+
+    <target name="init" description="init description">
+        <mkdir dir="${dst}" />
+    </target>
+
+    <!-- 製作基本的jar(無法執行) -->
+    <target name="mkjar" depends="init">
+        <jar destfile="${dst}/my.jar" basedir="classes">
+        </jar>
+    </target>
+
+    <!-- 製作可執行的jar -->
+    <target name="mkexecjar" depends="init">
+        <jar destfile="${dst}/my.jar" basedir="classes">
+            <manifest>
+                <attribute name="Main-Class" value="learning.sample.multilanguage.MultiLanguage"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+        </jar>
+    </target>
+</project>
+

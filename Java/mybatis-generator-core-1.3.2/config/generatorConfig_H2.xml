@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- generatorConfig_H2 -->
+<generatorConfiguration>
+  <!-- 資料庫連接driver -->
+  <classPathEntry location="lib/jdbc/h2-1.4.181.jar" />
+
+  <!-- 資料庫連接資料 -->
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <!-- local H2 -->
+    <jdbcConnection driverClass="org.h2.Driver"
+      connectionURL="jdbc:h2:tcp://localhost/~/test"
+      userId="sa"
+      password="">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <!-- POJO -->
+    <!-- <javaModelGenerator targetPackage="ln.mybatis.model" targetProject="output/src"> -->
+    <javaModelGenerator targetPackage="eztravel.core.pojo.frnplatform" targetProject="output/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <!-- XML -->
+    <!-- <sqlMapGenerator targetPackage="ln.mybatis.xml"  targetProject="output/src"> -->
+    <sqlMapGenerator targetPackage="eztravel.persistence.repository.frnplatform"  targetProject="output/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!-- Mapper -->
+    <!-- <javaClientGenerator type="XMLMAPPER" targetPackage="ln.mybatis.dao"  targetProject="output/src"> -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="eztravel.persistence.repository.frnplatform"  targetProject="output/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- 要產生的Table -->
+    <!-- local H2 -->
+    <table tableName="test" domainObjectName="Test" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false"></table>
+
+  </context>
+</generatorConfiguration>

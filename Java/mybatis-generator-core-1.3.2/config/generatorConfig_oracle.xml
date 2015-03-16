@@ -19,7 +19,7 @@
     <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
       connectionURL="jdbc:oracle:thin:@v890-3.eztravel.com.tw:1521:erpdbhtl"
       userId="itian"
-      password="ez201408_db">
+      password="ez20141114_db">
     </jdbcConnection>
 
     <javaTypeResolver >
@@ -47,8 +47,9 @@
 
     <!-- 要產生的Table -->
     <!-- config -->
+    <table tableName="TBLPRO" domainObjectName="Pro" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
     <table tableName="TBLINSTAL_DET" domainObjectName="InstalDet" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
-    <table tableName="tbltra_contract" domainObjectName="TraContract" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="TBLTRA_CONTRACT" domainObjectName="TraContract" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
 
   </context>
 </generatorConfiguration>

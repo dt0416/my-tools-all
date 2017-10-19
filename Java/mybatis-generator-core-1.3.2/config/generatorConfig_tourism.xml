@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- generatorConfig_postgreSQL -->
+<generatorConfiguration>
+  <!-- 資料庫連接driver -->
+  <classPathEntry location="lib/jdbc/postgresql-9.3-1102-jdbc41.jar" />
+
+  <!-- 資料庫連接資料 -->
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <!-- 註解設定 -->
+    <commentGenerator>
+      <property name="suppressAllComments" value="true" />
+    </commentGenerator>
+
+    <!-- PostgreSQL -->
+    <jdbcConnection driverClass="org.postgresql.Driver"
+      connectionURL="jdbc:postgresql://10.10.2.68:5444/eztourism"
+      userId="eztourism_ian"
+      password="ez_54321">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <!-- POJO -->
+    <!-- <javaModelGenerator targetPackage="ln.mybatis.model" targetProject="output/src"> -->
+    <javaModelGenerator targetPackage="eztravel.core.pojo.ep" targetProject="output/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <!-- XML -->
+    <!-- <sqlMapGenerator targetPackage="ln.mybatis.xml"  targetProject="output/src"> -->
+    <sqlMapGenerator targetPackage="eztravel.persistence.repository.ep"  targetProject="output/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!-- Mapper -->
+    <!-- <javaClientGenerator type="XMLMAPPER" targetPackage="ln.mybatis.dao"  targetProject="output/src"> -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="eztravel.persistence.repository.ep"  targetProject="output/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- 要產生的Table -->
+    <!-- config -->
+    <table tableName="tblep_img" domainObjectName="Img" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblep_img_d" domainObjectName="ImgD" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblep_img_mapping" domainObjectName="ImgMapping" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="tblep_keyword" domainObjectName="KeyWord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+
+  </context>
+</generatorConfiguration>

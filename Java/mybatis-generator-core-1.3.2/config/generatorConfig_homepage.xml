@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- generatorConfig_postgreSQL -->
+<generatorConfiguration>
+  <!-- 資料庫連接driver -->
+  <classPathEntry location="lib/jdbc/postgresql-9.3-1102-jdbc41.jar" />
+
+  <!-- 資料庫連接資料 -->
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <!-- 註解設定 -->
+    <commentGenerator>
+      <property name="suppressAllComments" value="true" />
+    </commentGenerator>
+
+    <!-- PostgreSQL -->
+    <jdbcConnection driverClass="org.postgresql.Driver"
+      connectionURL="jdbc:postgresql://edb-t01:5444/ezhomepage"
+      userId="ezhomepage_ianchen"
+      password="homepage_ianchen0331">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <!-- POJO -->
+    <!-- <javaModelGenerator targetPackage="ln.mybatis.model" targetProject="output/src"> -->
+    <javaModelGenerator targetPackage="eztravel.rest.pojo.homepage" targetProject="output/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <!-- XML -->
+    <!-- <sqlMapGenerator targetPackage="ln.mybatis.xml"  targetProject="output/src"> -->
+    <sqlMapGenerator targetPackage="eztravel.persistence.repository.homepage"  targetProject="output/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!-- Mapper -->
+    <!-- <javaClientGenerator type="XMLMAPPER" targetPackage="ln.mybatis.dao"  targetProject="output/src"> -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="eztravel.persistence.repository.homepage"  targetProject="output/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- 要產生的Table -->
+    <!-- config -->
+    <table tableName="tblhp_news" domainObjectName="News" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="true" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+
+  </context>
+</generatorConfiguration>

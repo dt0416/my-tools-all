@@ -19,7 +19,7 @@
     <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
       connectionURL="jdbc:oracle:thin:@v890-3.eztravel.com.tw:1521:erpdbhtl"
       userId="itian"
-      password="ez20141114_db">
+      password="eztravel_0601">
     </jdbcConnection>
 
     <javaTypeResolver >
@@ -28,28 +28,33 @@
 
     <!-- POJO -->
     <!-- <javaModelGenerator targetPackage="ln.mybatis.model" targetProject="output/src"> -->
-    <javaModelGenerator targetPackage="eztravel.core.pojo.frnplatform" targetProject="output/java">
+    <javaModelGenerator targetPackage="eztravel.core.pojo.ezec.pkgfrn" targetProject="output/java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
 
     <!-- XML -->
     <!-- <sqlMapGenerator targetPackage="ln.mybatis.xml"  targetProject="output/src"> -->
-    <sqlMapGenerator targetPackage="eztravel.persistence.repository.frnplatform.center"  targetProject="output/resources">
+    <sqlMapGenerator targetPackage="eztravel.persistence.repository.erpdb.pkgfrn"  targetProject="output/resources">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
     <!-- Mapper -->
     <!-- <javaClientGenerator type="XMLMAPPER" targetPackage="ln.mybatis.dao"  targetProject="output/src"> -->
-    <javaClientGenerator type="XMLMAPPER" targetPackage="eztravel.persistence.repository.frnplatform.center"  targetProject="output/java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="eztravel.persistence.repository.erpdb.pkgfrn"  targetProject="output/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
     <!-- 要產生的Table -->
     <!-- config -->
+    <table tableName="TBLCODE_AIRPORT" domainObjectName="CodeAirport" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="TBLVENDOR" domainObjectName="Vendor" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="true" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+
     <table tableName="TBLPRO" domainObjectName="Pro" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
     <table tableName="TBLINSTAL_DET" domainObjectName="InstalDet" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
     <table tableName="TBLTRA_CONTRACT" domainObjectName="TraContract" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="true" modelType="flat"></table>
+    <table tableName="TBLCODE_CITY" domainObjectName="CodeCity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="false" modelType="flat"></table>
+    <table tableName="TBLCODE_COUNTRY" domainObjectName="CodeCountry" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false" enableInsert="false" enableUpdateByPrimaryKey="false" enableSelectByPrimaryKey="false" modelType="flat"></table>
 
   </context>
 </generatorConfiguration>
